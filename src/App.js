@@ -1,25 +1,14 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import Form from "./Form";
+import DisplayWords from "./DisplayWords";
 
 function App() {
-  const [words, setWords] = useState([]);
 
-  useEffect(() => {
-    axios({
-      url: "https://api.datamuse.com/words",
-      method: "GET",
-      dataResponse: "json",
-      params: {
-        rel_jjb: "ocean",
-      },
-    }).then((res) => {
-      setWords(res.data);
-    });
-  }, []);
+  const [userSearchTerm, setUserSearchTerm] = useState("");
 
   return (
+
     <div>
       <header>
         <h1>POETRY</h1>
@@ -27,18 +16,18 @@ function App() {
 
       <main>
         <section className="formContainer">
-          <Form />
+          <Form setUserSearchTerm ={setUserSearchTerm}/>
+        </section>
+        <section className="displaySection">
+          <DisplayWords 
+          userSearchTerm={userSearchTerm}
+          />
         </section>
       </main>
-      <ul>
-        {words.map((wordsObj, index) => {
-          return (
-            <li key={index}>
-              <p>{wordsObj.word}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <footer>
+        <p>Created at Juno College</p>
+      </footer>
+
     </div>
   );
 }

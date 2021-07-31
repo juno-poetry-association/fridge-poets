@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Form() {
+function Form(props) {
+
+  const { setUserSearchTerm } = props;
+
   const [userInput, setUserInput] = useState([]);
 
   const [autoComplete, setAutoComplete] = useState([]);
@@ -20,29 +23,42 @@ function Form() {
     });
   }, [userInput]);
 
-  const inputHAndleChange = (event) => {
+  const inputHandleChange = (event) => {
     setUserInput(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    setUserSearchTerm(userInput)
+    
+  }
+
+  const handleClick = (event) => {
+    // console.log(event.target.value);
+    setUserInput(event.target.value)
+  }
+
   return (
-    <form action="#">
+    <form action="#" onSubmit={handleSubmit}>
       <label htmlFor="searchInput" className="sr-only"></label>
       <input
         type="text"
         id="searchInput"
-        onChange={inputHAndleChange}
+        onChange={inputHandleChange}
         list="autoCompleteSuggestions"
+        value={userInput}
       />
       <datalist id="autoCompleteSuggestions">
         {autoComplete.map((suggestion, index) => {
           return <option value={suggestion.word} key={index}></option>;
         })}
       </datalist>
-      <button>Search</button>
-      <button>Halloween</button>
-      <button>Christmas</button>
-      <button>Dirty words</button>
-      <button>Technology</button>
+      <button type="submit">Search</button>
+      <button onClick={handleClick} value="halloween">Halloween</button>
+      <button onClick={handleClick} value="christmas">Christmas</button>
+      <button onClick={handleClick} value="dirty words">Dirty words</button>
+      <button onClick={handleClick} value="technology">Technology</button>
     </form>
   );
 }
