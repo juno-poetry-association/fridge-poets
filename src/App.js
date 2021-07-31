@@ -16,18 +16,26 @@ function App() {
 
       <main>
         <section className="formContainer">
-          <Form setUserSearchTerm ={setUserSearchTerm}/>
+          <Form setUserSearchTerm ={setUserSearchTerm} />
         </section>
+
         <section className="displaySection">
-          <DisplayWords 
-          userSearchTerm={userSearchTerm}
-          />
+          <DisplayWords userSearchTerm={userSearchTerm} />
         </section>
+
+        <section className="poemContainer">
+          {/* poem component here */}
+        </section>
+
+        <section className="functionWords">
+          {/* function word component here */}
+        </section>
+
       </main>
+
       <footer>
         <p>Created at Juno College</p>
       </footer>
-
     </div>
   );
 }
