@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Form from "./Form";
-
-
+import { addWordToPoem } from './CreatePoem';
 
 const DisplayWords = (props) => {
 
-  const [words, setWords] = useState([]);
+  addWordToPoem('pumpkin');
+
+  const [ words, setWords ] = useState([]);
 
   const  { userSearchTerm } = props;
-
-  console.log(userSearchTerm);
 
   useEffect(() => {
     axios({
@@ -25,18 +23,16 @@ const DisplayWords = (props) => {
     });
   }, [userSearchTerm]);
 
-
   return (
-
     <ul>
-    {words.map((wordsObj, index) => {
-      return (
-        <li key={index}>
-          <p>{wordsObj.word}</p>
-        </li>
-      );
-    })}
-  </ul>
+      {words.map((wordsObj) => {
+        return (
+          <li key={wordsObj.word}>
+            <p>{wordsObj.word}</p>
+          </li>
+        );
+      })}
+    </ul>
   )
 }
 
