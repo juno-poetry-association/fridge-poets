@@ -3,7 +3,7 @@ import axios from "axios";
 
 function Form(props) {
 
-  const { setUserSearchTerm } = props;
+  const { setUserSearchTerm, setFunctionsDisplayed } = props;
 
   const [userInput, setUserInput] = useState([]);
 
@@ -29,13 +29,11 @@ function Form(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    setUserSearchTerm(userInput)
-    
+    setUserSearchTerm(userInput);
+    setFunctionsDisplayed(true);
   }
 
   const handleClick = (event) => {
-    // console.log(event.target.value);
     setUserInput(event.target.value)
   }
 

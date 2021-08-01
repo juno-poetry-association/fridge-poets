@@ -2,10 +2,13 @@ import "./App.css";
 import { useState } from "react";
 import Form from "./Form";
 import DisplayWords from "./DisplayWords";
+import FunctionWords from "./FunctionWords";
+import CreatePoem from "./CreatePoem";
 
 function App() {
 
   const [userSearchTerm, setUserSearchTerm] = useState("");
+  const [functionsDisplayed, setFunctionsDisplayed] = useState(false)
 
   return (
 
@@ -16,19 +19,22 @@ function App() {
 
       <main>
         <section className="formContainer">
-          <Form setUserSearchTerm ={setUserSearchTerm} />
+          <Form
+            setUserSearchTerm={setUserSearchTerm}
+            setFunctionsDisplayed={setFunctionsDisplayed}
+          />
         </section>
 
         <section className="displaySection">
           <DisplayWords userSearchTerm={userSearchTerm} />
         </section>
 
-        <section className="poemContainer">
-          {/* poem component here */}
+        <section className="functionWords">
+          {functionsDisplayed ? <FunctionWords /> : null}
         </section>
 
-        <section className="functionWords">
-          {/* function word component here */}
+        <section className="poemContainer">
+          <CreatePoem />
         </section>
 
       </main>
