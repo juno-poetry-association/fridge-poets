@@ -9,6 +9,7 @@ function App() {
 
   const [userSearchTerm, setUserSearchTerm] = useState("");
   const [functionsDisplayed, setFunctionsDisplayed] = useState(false)
+  const [yourPoem, setYourPoem] = useState([]);
 
   return (
 
@@ -26,15 +27,22 @@ function App() {
         </section>
 
         <section className="displaySection">
-          <DisplayWords userSearchTerm={userSearchTerm} />
+          <DisplayWords
+            userSearchTerm={userSearchTerm}
+            yourPoem={yourPoem}
+            setYourPoem={setYourPoem}
+          />
         </section>
 
         <section className="functionWords">
-          {functionsDisplayed ? <FunctionWords /> : null}
+          {functionsDisplayed ? <FunctionWords 
+            yourPoem={yourPoem}
+            setYourPoem={setYourPoem}
+          /> : null}
         </section>
 
         <section className="poemContainer">
-          <CreatePoem />
+          <CreatePoem yourPoem={yourPoem}/>
         </section>
 
       </main>

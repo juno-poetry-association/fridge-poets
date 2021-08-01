@@ -1,18 +1,20 @@
-import { useState } from "react";
+const CreatePoem = (props) => {
 
-const CreatePoem = () => {
+  const { yourPoem } = props
 
-  const [ yourPoem, setYourPoem ] = useState([]);
-
-  function addWordToPoem(word) {
-    const newPoem = [...yourPoem, word];
-    setYourPoem(newPoem);
-  }
-
-  return(
-    <p>here's our poem!</p>
+  return (
+    <ul>
+      {
+        yourPoem.map((word) => {
+          return (
+            <li key={word}>
+              <p>{word}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
   )
 }
 
 export default CreatePoem;
-export { addWordToPoem } from CreatePoem;

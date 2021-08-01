@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { addWordToPoem } from './CreatePoem';
 
 const DisplayWords = (props) => {
 
-  addWordToPoem('pumpkin');
-
   const [ words, setWords ] = useState([]);
 
-  const  { userSearchTerm } = props;
+  const  { userSearchTerm, yourPoem, setYourPoem } = props;
 
   useEffect(() => {
     axios({
@@ -23,11 +20,20 @@ const DisplayWords = (props) => {
     });
   }, [userSearchTerm]);
 
+  function addWordToPoem(word) {
+    const newPoem = [ ...yourPoem, word ];
+    setYourPoem(newPoem);
+    // TO REMOVE WORD
+    const oldWordsArr = [ ...words ];
+    const filteredArr = oldWordsArr.filter(arrWord => arrWord.word !== word);
+    setWords(filteredArr)
+  }
+
   return (
     <ul>
       {words.map((wordsObj) => {
         return (
-          <li key={wordsObj.word}>
+          <li key={wordsObj.word} onClick={() => addWordToPoem(wordsObj.word)}>
             <p>{wordsObj.word}</p>
           </li>
         );
