@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 body {
-  background-image: url('./fridge1.jpg');
+  background-image: url('./assets/fridge1.jpg');
   background-size: cover;
+  cursor: default;
   font-size: 125%;
   padding: 20px;
   text-align: center;
 }
 
 section {
+  /* opaque background? */
   border: 2px solid black;
   margin: 10px 0;
   padding: 20px;
@@ -21,24 +23,25 @@ form button {
   padding: 10px;
 }
 
-.displaySection ul {
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-.displaySection li {
-  background-color: whitesmoke;
+li {
+  background-color: ghostwhite;
   border: 1px solid black;
-  box-shadow: 1px 1px 0 black;
+  box-shadow: 2px 2px 0 black;
+  cursor: pointer;
   display: inline-block;
   margin: 5px;
   padding: 5px 10px;
   
 }
 
-.displaySection p {
+p {
   font-family: 'Special Elite', serif;
   margin: 0;
 }
