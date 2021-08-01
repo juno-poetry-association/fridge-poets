@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Form(props) {
-
   const { setUserSearchTerm, setFunctionsDisplayed } = props;
 
   const [userInput, setUserInput] = useState([]);
@@ -31,11 +30,12 @@ function Form(props) {
     event.preventDefault();
     setUserSearchTerm(userInput);
     setFunctionsDisplayed(true);
-  }
+    setUserInput("");
+  };
 
   const handleClick = (event) => {
-    setUserInput(event.target.value)
-  }
+    setUserInput(event.target.value);
+  };
 
   return (
     <form action="#" onSubmit={handleSubmit}>
@@ -53,10 +53,18 @@ function Form(props) {
         })}
       </datalist>
       <button type="submit">Search</button>
-      <button onClick={handleClick} value="halloween">Halloween</button>
-      <button onClick={handleClick} value="christmas">Christmas</button>
-      <button onClick={handleClick} value="dirty words">Dirty words</button>
-      <button onClick={handleClick} value="technology">Technology</button>
+      <button onClick={handleClick} value="halloween">
+        Halloween
+      </button>
+      <button onClick={handleClick} value="christmas">
+        Christmas
+      </button>
+      <button onClick={handleClick} value="dirty words">
+        Dirty words
+      </button>
+      <button onClick={handleClick} value="technology">
+        Technology
+      </button>
     </form>
   );
 }

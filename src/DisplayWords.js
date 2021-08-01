@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const DisplayWords = (props) => {
-
-  const [ words, setWords ] = useState([]);
-
-  const  { userSearchTerm, yourPoem, setYourPoem } = props;
+  const { userSearchTerm, yourPoem, setYourPoem, setWords, words } = props;
 
   useEffect(() => {
     axios({
@@ -13,7 +10,8 @@ const DisplayWords = (props) => {
       method: "GET",
       dataResponse: "json",
       params: {
-        rel_jjb: userSearchTerm,
+        rel_trg: userSearchTerm,
+        max: 40,
       },
     }).then((res) => {
       setWords(res.data);
@@ -21,12 +19,12 @@ const DisplayWords = (props) => {
   }, [userSearchTerm]);
 
   function addWordToPoem(word) {
-    const newPoem = [ ...yourPoem, word ];
+    const newPoem = [...yourPoem, word];
     setYourPoem(newPoem);
     // TO REMOVE WORD
-    const oldWordsArr = [ ...words ];
-    const filteredArr = oldWordsArr.filter(arrWord => arrWord.word !== word);
-    setWords(filteredArr)
+    const oldWordsArr = [...words];
+    const filteredArr = oldWordsArr.filter((arrWord) => arrWord.word !== word);
+    setWords(filteredArr);
   }
 
   return (
@@ -39,7 +37,7 @@ const DisplayWords = (props) => {
         );
       })}
     </ul>
-  )
-}
+  );
+};
 
 export default DisplayWords;
