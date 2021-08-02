@@ -1,5 +1,3 @@
-import { useState } from "react";
-import functionWordArray from "./functionWordArray";
 
 const FunctionWords = (props) => {
   const { yourPoem, setYourPoem, setFunctionArray, functionArray } = props;
