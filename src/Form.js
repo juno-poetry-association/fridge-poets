@@ -4,7 +4,7 @@ import axios from "axios";
 function Form(props) {
   const { setUserSearchTerm, setFunctionsDisplayed } = props;
 
-  const [userInput, setUserInput] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
   const [autoComplete, setAutoComplete] = useState([]);
 
@@ -25,12 +25,15 @@ function Form(props) {
   const inputHandleChange = (event) => {
     setUserInput(event.target.value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    setUserSearchTerm(userInput);
-    setFunctionsDisplayed(true);
-    setUserInput("");
+    if (userInput === "") {
+      alert("Please enter a word or choose some of our themes!");
+    } else {
+      setUserSearchTerm(userInput);
+      setFunctionsDisplayed(true);
+      setUserInput("");
+    }
   };
 
   const handleClick = (event) => {
