@@ -14,7 +14,11 @@ const DisplayWords = (props) => {
         max: 40,
       },
     }).then((res) => {
-      setWords(res.data);
+      const data = res.data;
+      const wordsArray = data.map( (wordObj) => {
+        return wordObj.word;
+      })
+      setWords(wordsArray);
     });
   }, [userSearchTerm]);
 
@@ -23,16 +27,16 @@ const DisplayWords = (props) => {
     setYourPoem(newPoem);
     // TO REMOVE WORD
     const oldWordsArr = [...words];
-    const filteredArr = oldWordsArr.filter((arrWord) => arrWord.word !== word);
+    const filteredArr = oldWordsArr.filter((arrWord) => arrWord !== word);
     setWords(filteredArr);
   }
 
   return (
     <ul>
-      {words.map((wordsObj) => {
+      {words.map((word) => {
         return (
-          <li key={wordsObj.word} onClick={() => addWordToPoem(wordsObj.word)}>
-            <p>{wordsObj.word}</p>
+          <li key={word} onClick={() => addWordToPoem(word)}>
+            <p>{word}</p>
           </li>
         );
       })}

@@ -51,6 +51,7 @@ function App() {
         <section className="poemContainer">
           <CreatePoem
             yourPoem={yourPoem}
+            setYourPoem={setYourPoem}
             setFunctionArray={setFunctionArray}
             functionArray={functionArray}
             setWords={setWords}
