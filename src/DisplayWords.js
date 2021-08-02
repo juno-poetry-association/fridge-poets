@@ -20,7 +20,7 @@ const DisplayWords = (props) => {
       })
       setWords(wordsArray);
     });
-  }, [userSearchTerm]);
+  }, [userSearchTerm, setWords]);
 
   function addWordToPoem(word) {
     const newPoem = [...yourPoem, word];
