@@ -62,8 +62,8 @@ function Form(props) {
       <button onClick={handleClick} value="christmas">
         Christmas
       </button>
-      <button onClick={handleClick} value="dirty words">
-        Dirty words
+      <button onClick={handleClick} value="animals">
+        Animals
       </button>
       <button onClick={handleClick} value="technology">
         Technology
