@@ -32,13 +32,13 @@ const CreatePoem = (props) => {
 
   return (
     <ul>
-      {yourPoem.map((word) => {
-        return (
-          <li key={word} onClick={() => handleRemove(word)}>
-            <p>{word}</p>
-          </li>
-        );
-      })}
+        {yourPoem.map((word) => {
+          return (
+            <li key={word} onClick={() => handleRemove(word)}>
+              <p>{word}</p>
+            </li>
+          );
+        })}
     </ul>
   );
 };

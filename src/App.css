@@ -18,7 +18,7 @@ section {
 }
 
 form input,
-form button {
+button {
   margin: 10px;
   padding: 10px;
 }
