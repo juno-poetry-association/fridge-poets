@@ -9,17 +9,19 @@ function Form(props) {
   const [autoComplete, setAutoComplete] = useState([]);
 
   useEffect(() => {
-    axios({
-      url: "https://api.datamuse.com/sug",
-      method: "GET",
-      dataResponse: "json",
-      params: {
-        s: userInput,
-        max: "6",
-      },
-    }).then((res) => {
-      setAutoComplete(res.data);
-    });
+    if (userInput !== "") {
+      axios({
+        url: "https://api.datamuse.com/sug",
+        method: "GET",
+        dataResponse: "json",
+        params: {
+          s: userInput,
+          max: "6",
+        },
+      }).then((res) => {
+        setAutoComplete(res.data);
+      });
+    }
   }, [userInput]);
 
   const inputHandleChange = (event) => {
@@ -27,9 +29,14 @@ function Form(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    const checkUserInput = /[^a-z]+/i 
     if (userInput === "") {
       alert("Please enter a word or choose some of our themes!");
-    } else {
+    } else if (checkUserInput.test(userInput) ) { 
+      alert("Please write one word only!")
+    } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
+      alert("Wash your mouth!")
+    }else {
       setUserSearchTerm(userInput);
       setFunctionsDisplayed(true);
       setUserInput("");

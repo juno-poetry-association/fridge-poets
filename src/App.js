@@ -13,6 +13,12 @@ function App() {
   const [functionArray, setFunctionArray] = useState(functionWordArray);
   const [words, setWords] = useState([]);
 
+  const handleRefresh = () => {
+    setFunctionsDisplayed(false);
+    setYourPoem([]);
+    setWords([]);
+  }
+
   return (
     <div>
       <header>
@@ -57,6 +63,7 @@ function App() {
             setWords={setWords}
             words={words}
           />
+          <button onClick={handleRefresh}>Refresh!</button>
         </section>
       </main>
 
