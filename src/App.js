@@ -21,17 +21,15 @@ function App() {
 
   return (
     <div>
-      <header>
+      <header className="wrapper">
         <h1>POETRY</h1>
+        <Form
+          setUserSearchTerm={setUserSearchTerm}
+          setFunctionsDisplayed={setFunctionsDisplayed}
+        />
       </header>
 
-      <main>
-        <section className="formContainer">
-          <Form
-            setUserSearchTerm={setUserSearchTerm}
-            setFunctionsDisplayed={setFunctionsDisplayed}
-          />
-        </section>
+      <main className="wrapper">
 
         <section className="displaySection">
           <DisplayWords
@@ -43,32 +41,36 @@ function App() {
           />
         </section>
 
-        <section className="functionWords">
-          {functionsDisplayed ? (
-            <FunctionWords
+        <div className="flex">
+
+          <section className="functionWords">
+            {functionsDisplayed ? (
+              <FunctionWords
+                yourPoem={yourPoem}
+                setYourPoem={setYourPoem}
+                setFunctionArray={setFunctionArray}
+                functionArray={functionArray}
+              />
+            ) : null}
+          </section>
+
+          <section className="poemContainer">
+            <CreatePoem
               yourPoem={yourPoem}
               setYourPoem={setYourPoem}
               setFunctionArray={setFunctionArray}
               functionArray={functionArray}
+              setWords={setWords}
+              words={words}
             />
-          ) : null}
-        </section>
+            <button onClick={handleRefresh}>Refresh!</button>
+          </section>
 
-        <section className="poemContainer">
-          <CreatePoem
-            yourPoem={yourPoem}
-            setYourPoem={setYourPoem}
-            setFunctionArray={setFunctionArray}
-            functionArray={functionArray}
-            setWords={setWords}
-            words={words}
-          />
-          <button onClick={handleRefresh}>Refresh!</button>
-        </section>
+        </div>
       </main>
 
-      <footer>
-        <p>Created at Juno College</p>
+      <footer className="wrapper">
+        <p>Created at <a href="https://junocollege.com">Juno College</a></p>
       </footer>
     </div>
   );

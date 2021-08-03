@@ -32,11 +32,11 @@ function Form(props) {
     const checkUserInput = /[^a-z]+/i 
     if (userInput === "") {
       alert("Please enter a word or choose some of our themes!");
-    } else if (checkUserInput.test(userInput) ) { 
+    } else if ( checkUserInput.test(userInput) ) { 
       alert("Please write one word only!")
-    } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
-      alert("Wash your mouth!")
-    }else {
+    // } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
+    //   alert("Wash your mouth!")
+    } else {
       setUserSearchTerm(userInput);
       setFunctionsDisplayed(true);
       setUserInput("");
