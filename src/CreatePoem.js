@@ -38,11 +38,8 @@ const CreatePoem = (props) => {
     setYourPoem(newPoem);
   };
 
-  // Saving the poem on the page
+  // Saving the poem to the firebase
   const savePoem = () => {
-    // const newPoemList = yourPoem;
-    // const newPoemList = [...yourPoem];
-    // setFavourites(newPoemList);
     const dbRef = firebase.database().ref();
     dbRef.push(yourPoem);
   };

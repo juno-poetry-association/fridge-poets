@@ -68,7 +68,7 @@ function App() {
         </section>
 
         <section className="savedPoem">
-          <SavedPoem yourPoem={yourPoem} />
+          <SavedPoem />
         </section>
       </main>
 

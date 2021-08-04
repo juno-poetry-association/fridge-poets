@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import firebase from "./firebase";
 
-const SavedPoem = (props) => {
-  const { yourPoem } = props;
+const SavedPoem = () => {
   const [favourites, setFavourites] = useState([]);
 
   // useEffect to store favourite movies into the state.
