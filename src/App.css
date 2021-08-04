@@ -14,8 +14,10 @@ body {
   background-image: url('./assets/fridge1.jpg');
   background-size: cover;
   background-attachment: scroll;
+  /* background-repeat: no-repeat; */
   cursor: default;
   font-size: 125%;
+  /* height: 100vh; */
   text-align: center;
 }
 
@@ -131,6 +133,7 @@ a {
 
 /* MOBILE */
 @media (max-width: 420px) {
+  /* increase to 480px (or more?) */
 
   header,
   .flex {
