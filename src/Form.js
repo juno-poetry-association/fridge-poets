@@ -29,7 +29,7 @@ function Form(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const checkUserInput = /[^a-z]+/i 
+    const checkUserInput = /[^a-z]+/i;
     if (userInput === "") {
       alert("Please enter a word or choose some of our themes!");
     } else if ( checkUserInput.test(userInput) ) { 
