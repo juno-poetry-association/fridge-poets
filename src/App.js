@@ -5,6 +5,7 @@ import DisplayWords from "./DisplayWords";
 import FunctionWords from "./FunctionWords";
 import CreatePoem from "./CreatePoem";
 import functionWordArray from "./functionWordArray";
+import SavedPoem from "./SavedPoem";
 
 function App() {
   const [userSearchTerm, setUserSearchTerm] = useState("");
@@ -17,7 +18,7 @@ function App() {
     setFunctionsDisplayed(false);
     setYourPoem([]);
     setWords([]);
-  }
+  };
 
   return (
     <div>
@@ -67,6 +68,11 @@ function App() {
           </section>
 
         </div>
+
+        <section className="savedPoem">
+          <SavedPoem />
+        </section>
+
       </main>
 
       <footer className="wrapper">
