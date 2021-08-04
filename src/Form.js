@@ -62,17 +62,15 @@ function Form(props) {
           return <option value={suggestion.word} key={index}></option>;
         })}
       </datalist>
-      <button type="submit">Search</button>
-      <button onClick={handleClick} value="halloween">
-        Halloween
-      </button>
-      <button onClick={handleClick} value="christmas">
+      <button className="search magnet" type="submit"> Search </button>
+      <button className="halloween magnet" onClick={handleClick} value="halloween">halloween</button>
+      <button className="christmas magnet"onClick={handleClick} value="christmas">
         Christmas
       </button>
-      <button onClick={handleClick} value="animals">
+      <button className="animals magnet"onClick={handleClick} value="animals">
         Animals
       </button>
-      <button onClick={handleClick} value="technology">
+      <button className="technology magnet"onClick={handleClick} value="technology">
         Technology
       </button>
     </form>

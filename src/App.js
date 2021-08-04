@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <header className="wrapper">
-        <h1>POETRY</h1>
+        <h1>Refridgeration Versification</h1>
         <Form
           setUserSearchTerm={setUserSearchTerm}
           setFunctionsDisplayed={setFunctionsDisplayed}
