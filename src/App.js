@@ -5,6 +5,7 @@ import DisplayWords from "./DisplayWords";
 import FunctionWords from "./FunctionWords";
 import CreatePoem from "./CreatePoem";
 import functionWordArray from "./functionWordArray";
+import SavedPoem from "./SavedPoem";
 
 function App() {
   const [userSearchTerm, setUserSearchTerm] = useState("");
@@ -17,7 +18,7 @@ function App() {
     setFunctionsDisplayed(false);
     setYourPoem([]);
     setWords([]);
-  }
+  };
 
   return (
     <div>
@@ -64,6 +65,10 @@ function App() {
             words={words}
           />
           <button onClick={handleRefresh}>Refresh!</button>
+        </section>
+
+        <section className="savedPoem">
+          <SavedPoem yourPoem={yourPoem} />
         </section>
       </main>
 

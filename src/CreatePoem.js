@@ -1,7 +1,15 @@
 import functionWordArray from "./functionWordArray";
+import firebase from "./firebase";
 
 const CreatePoem = (props) => {
-  const { yourPoem, setYourPoem, words, setWords, functionArray, setFunctionArray } = props;
+  const {
+    yourPoem,
+    setYourPoem,
+    words,
+    setWords,
+    functionArray,
+    setFunctionArray,
+  } = props;
 
   // when users click on the word, remove that word from poemArray.
   // we need to send back to words array
@@ -30,8 +38,18 @@ const CreatePoem = (props) => {
     setYourPoem(newPoem);
   };
 
+  // Saving the poem on the page
+  const savePoem = () => {
+    // const newPoemList = yourPoem;
+    // const newPoemList = [...yourPoem];
+    // setFavourites(newPoemList);
+    const dbRef = firebase.database().ref();
+    dbRef.push(yourPoem);
+  };
+
   return (
-    <ul>
+    <>
+      <ul>
         {yourPoem.map((word) => {
           return (
             <li key={word} onClick={() => handleRemove(word)}>
@@ -39,7 +57,9 @@ const CreatePoem = (props) => {
             </li>
           );
         })}
-    </ul>
+      </ul>
+      <button onClick={savePoem}>Save</button>
+    </>
   );
 };
 
