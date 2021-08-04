@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <header>
-        <h1>POETRY</h1>
+        <h1>Refridgeration Versification</h1>
       </header>
 
       <main>
@@ -63,7 +63,8 @@ function App() {
             setWords={setWords}
             words={words}
           />
-          <button onClick={handleRefresh}>Refresh!</button>
+
+          <button className="refresh magnet" onClick={handleRefresh}>Start Over!</button>
         </section>
       </main>
 
