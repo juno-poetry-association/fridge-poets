@@ -23,12 +23,6 @@ function App() {
   const [functionArray, setFunctionArray] = useState(functionWordArray);
   const [words, setWords] = useState([]);
 
-  const handleRefresh = () => {
-    setFunctionsDisplayed(false);
-    setYourPoem([]);
-    setWords([]);
-  };
-
   return (
     <div>
       <header className="wrapper">
@@ -69,19 +63,11 @@ function App() {
               yourPoem={yourPoem}
               setYourPoem={setYourPoem}
               setFunctionArray={setFunctionArray}
+              setFunctionsDisplayed={setFunctionsDisplayed}
               functionArray={functionArray}
               setWords={setWords}
               words={words}
             />
-            <button
-              aria-label="refresh"
-              className="refreshBtn"
-              onClick={handleRefresh}
-            >
-              <span>
-                <FontAwesomeIcon className="faicons redo" icon="redo" />
-              </span>
-            </button>
           </section>
         </div>
 

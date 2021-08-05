@@ -50,49 +50,60 @@ function Form(props) {
 
   return (
     <form action="#" onSubmit={handleSubmit}>
-      <label htmlFor="searchInput" className="sr-only"></label>
-      <input
-        type="text"
-        id="searchInput"
-        onChange={inputHandleChange}
-        list="autoCompleteSuggestions"
-        value={userInput}
-      />
 
-      <datalist id="autoCompleteSuggestions">
-        {autoComplete.map((suggestion, index) => {
-          return <option value={suggestion.word} key={index}></option>;
-        })}
-      </datalist>
-      <button className="search magnet magnifyingGlass" type="submit">
-        <span>
-          <FontAwesomeIcon className="faicons " icon="search" />
-        </span>
-      </button>
-      <button
-        className="halloween magnet"
-        onClick={handleClick}
-        value="halloween"
-      >
-        halloween
-      </button>
-      <button
-        className="christmas magnet"
-        onClick={handleClick}
-        value="christmas"
-      >
-        Christmas
-      </button>
-      <button className="animals magnet" onClick={handleClick} value="animals">
-        Animals
-      </button>
-      <button
-        className="technology magnet"
-        onClick={handleClick}
-        value="technology"
-      >
-        Technology
-      </button>
+      <div className="searchLabel">
+        <label htmlFor="searchInput" className="sr-only">Search</label>
+        <input
+          type="text"
+          id="searchInput"
+          onChange={inputHandleChange}
+          list="autoCompleteSuggestions"
+          value={userInput}
+        />
+        {/* <span className="magnifyingGlass">
+          <FontAwesomeIcon className="faicons" icon="search" />
+        </span> */}
+        <datalist id="autoCompleteSuggestions">
+          {autoComplete.map((suggestion, index) => {
+            return <option value={suggestion.word} key={index}></option>;
+          })}
+        </datalist>
+        <button className="search magnet" type="submit">
+          Search
+        </button>
+      </div>
+
+      <div className="allThemeButtons">
+        <button
+          className="halloween magnet"
+          onClick={handleClick}
+          value="halloween"
+        >
+          halloween
+        </button>
+        <button
+          className="christmas magnet"
+          onClick={handleClick}
+          value="christmas"
+        >
+          Christmas
+        </button>
+        <button
+          className="animals magnet"
+          onClick={handleClick}
+          value="animals"
+        >
+          Animals
+        </button>
+        <button
+          className="technology magnet"
+          onClick={handleClick}
+          value="technology"
+        >
+          Technology
+        </button>
+      </div>
+
     </form>
   );
 }

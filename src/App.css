@@ -1,239 +1,26 @@
-html {
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-}
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-figcaption,
-figure,
-main {
-  display: block;
-}
-figure {
-  margin: 1em 40px;
-}
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-b,
-strong {
-  font-weight: inherit;
-}
-b,
-strong {
-  font-weight: bolder;
-}
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-dfn {
-  font-style: italic;
-}
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-audio,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-img {
-  border-style: none;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
-textarea {
-  overflow: auto;
-}
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-details,
-menu {
-  display: block;
-}
-summary {
-  display: list-item;
-}
-canvas {
-  display: inline-block;
-}
-template {
-  display: none;
-}
-[hidden] {
-  display: none;
-}
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: "";
-  clear: both;
-  height: 0;
-}
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
-html {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+*, *:before, *:after {box-sizing: inherit}
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* GOOGLE FONTS IMPORT */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Georama:wght@600&display=swap");
+
+/* STYLING STARTS HERE */
 
 body {
   background-image: url("./assets/fridge1.jpg");
   background-size: cover;
   background-attachment: scroll;
-  /* background-repeat: no-repeat; */
   cursor: default;
   font-size: 125%;
-  /* height: 100vh; */
   text-align: center;
 }
 
@@ -243,68 +30,77 @@ body {
   width: 90%;
 }
 
+section {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  padding: 20px;
+}
+
+p {
+  font-family: "Special Elite", serif;
+  margin: 0;
+}
+
 /* HEADER SECTION  */
 
 .headerContainer {
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-top: 15px; 
 }
 
 h1 {
   padding: 0;
   margin: 0;
-  width: 20%;
-  /* color: rgb(152, 152, 153);  */
-  color: rgb(118, 118, 121);
+  min-width: 25%;
+  color: rgb(152, 152, 153); 
   word-wrap: normal;
   line-height: 4vw;
-
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(31, 23, 23);
-  
-  /* font-size: 4vw;
+  font-size: 4vw;
   letter-spacing: 4px;
   font-family: 'Alfa Slab One', cursive;
-  -webkit-text-stroke-color: rgb(8, 8, 8); */
-
-  font-size: 4rem;
-  letter-spacing: 5px;
-  font-family: "Alfa Slab One", cursive;
-  text-align: left;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(8, 8, 8);
+  
 }
 
-form input,
-button {
-  margin: 10px;
-  padding: 10px;
-}
-
-section {
-  background-color: rgba(0, 0, 0, 0.2);
-  margin: 10px 0;
-  padding: 20px;
-  /* min-height: 50px; */
-}
-
-.displaySection {
-  height: 28vh;
-}
-
+/* FORM (inside header) */
 form {
   display: flex;
   flex-direction: row;
   align-items: center; 
+  justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: 80%; 
+  min-width: 75%; 
 }
 
 .searchLabel {
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   justify-content: space-evenly;
+}
+
+form input,
+form button {
+  margin: 5px;
+  padding: 5px 10px;
+  transition: all 0.2s;
+}
+
+/* form input,
+button {
+  margin: 10px;
+  padding: 10px;
+} */
+
+form input {
+  min-width: 200px;
+  width: calc(60% - 20px);
+  border: none;
+  font-family: 'Georama', sans-serif;
+  box-shadow: 2.5px 2.5px 0 black;
 }
 
 .allThemeButtons {
@@ -314,107 +110,35 @@ form {
   align-items: center;
 }
 
-form input {
-  width: calc(70% - 20px);
-  border: none;
-  font-family: 'Georama', sans-serif;
-  box-shadow: 2.5px 2.5px 0 black;
-}
-
-.saveBtn {
-  position: absolute;
-  bottom: 0;
-  right: 50px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: ghostwhite;
-  font-size: 30px;
-}
-.save:hover,
-.save:focus {
-  color: orangered;
-}
-
-.refreshBtn {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 27px;
-}
-
-.redo {
-  color: ghostwhite;
-}
-
-.redo:hover,
-.redo:focus {
-  color: orangered;
-}
-
-  /* background-color: rgb(241, 221, 105);
-  background-size: cover;
-  background-position: center;
-  color: black; */
-
-form input,
-button {
-  margin: 5px;
-  padding: 5px 10px;
-  transition: all 0.2s;
-}
-
-li:active,
-li:focus {
-  transform: scale(1.1);
-  box-shadow: 2px 2px 1px 2px black;;
-  padding: 5px;
-}
-
-
 .magnet {
   text-transform: uppercase;
   font-family: 'Georama', sans-serif;
   font-size: 1vw;
   text-align: center;
-
-  box-shadow: 2.5px 2.5px 0 black;
+  box-shadow: 2.5px 2.5px black;
+  margin: 0 5px;
 }
 
 .magnet:active,
 .magnet:focus {
   transform: scale(1.1);
-  box-shadow: 2px 2px 1px 2px black;
+  box-shadow: 2.5px 2.5px 1px 2px black;
 }
 
-p {
-  font-family: "Special Elite", serif;
-  margin: 0;
-}
-
-.magnet {
-  text-transform: uppercase;
-  font-family: "Georama", sans-serif;
-  font-size: 2rem;
-}
-form {
+/* STYLING FOR MAGNIFYING FA-ICON */
+/* form {
   position: relative;
-}
-
+} 
 .magnifyingGlass {
   position: absolute;
   right: 150px;
   top: 22px;
   background: none;
 }
-
 form span:hover,
 form span:focus {
   color: orangered;
-}
+} */
 
 .search {
   border: none;
@@ -424,19 +148,17 @@ form span:focus {
   font-size: 2vw;
   color: rgb(240, 102, 102);
   width: calc(30% - 10px);
-
   box-shadow: none;
 }
 
 .halloween {
   border-radius: 50%;
   border: 3px solid orangered;
-  width: 22%;
-  height: 4rem;
+  width: 25%;
+  height: 5rem;
   background-image: url(./assets/pumpkin.jpg);
   background-size: cover;
   background-position: top;
-
   color: rgb(255, 94, 0);
   text-shadow: 2px 2px black;
   transform: rotate(30deg)
@@ -445,15 +167,12 @@ form span:focus {
 .christmas {
   width: 25%;
   height: 4rem;
-
   background-image: url(./assets/christmas.png);
   background-size: cover;
   background-position: bottom;
   border: 3px solid white;
-
   color: red;
   text-shadow: 1px 1px black;
-
   transform: rotate(-10deg)
 }
 
@@ -462,11 +181,9 @@ form span:focus {
   height: 5rem;
   border: 3px solid white;
   border-radius: 100px/100px;
-
   background-image: url(./assets/animals.jpg);
   background-size: contain;
   background-position: center;
-
   text-shadow: 2px 2px black;
   color: white;
 }
@@ -492,6 +209,30 @@ form span:focus {
 .refresh:active {
   border: 2px solid black;
 }
+
+/* DISPLAY WORDS SECTION */
+
+.displaySection {
+  height: 28vh;
+}
+
+
+
+  /* background-color: rgb(241, 221, 105);
+  background-size: cover;
+  background-position: center;
+  color: black; */
+
+
+li:active,
+li:focus {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 1px 2px black;;
+  padding: 5px;
+}
+
+
+
 
 /* POEM SECTION */
 
@@ -526,10 +267,44 @@ section {
   width: 60%;
 }
 
-.poemContainer button {
+.poemButtons {
   position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.saveBtn {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: ghostwhite;
+  font-size: 30px;
+}
+.save:hover,
+.save:focus {
+  color: orangered;
+}
+
+.refreshBtn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 27px;
+}
+
+.redo {
+  color: ghostwhite;
+}
+
+.redo:hover,
+.redo:focus {
+  color: orangered;
 }
 
 ul {
