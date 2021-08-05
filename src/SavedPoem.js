@@ -39,7 +39,11 @@ const SavedPoem = () => {
                 </li>
               );
             })}
-            <button className="saved" onClick={() => removePoem(poem[0])}>
+            <button
+              aria-label="delete poem"
+              className="saved"
+              onClick={() => removePoem(poem[0])}
+            >
               <span>
                 <FontAwesomeIcon className="faicons" icon="times" />
               </span>

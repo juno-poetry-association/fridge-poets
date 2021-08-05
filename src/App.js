@@ -71,7 +71,11 @@ function App() {
               setWords={setWords}
               words={words}
             />
-            <button className="refreshBtn" onClick={handleRefresh}>
+            <button
+              aria-label="refresh"
+              className="refreshBtn"
+              onClick={handleRefresh}
+            >
               <span>
                 <FontAwesomeIcon className="faicons redo" icon="redo" />
               </span>
