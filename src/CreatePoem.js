@@ -57,6 +57,7 @@ const CreatePoem = (props) => {
   // Refreshes all information on the page
   const handleRefresh = () => {
     setFunctionsDisplayed(false);
+    setFunctionArray(functionWordArray);
     setYourPoem([]);
     setWords([]);
   };
