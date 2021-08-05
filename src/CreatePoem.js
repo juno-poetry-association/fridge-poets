@@ -10,6 +10,7 @@ const CreatePoem = (props) => {
     setWords,
     functionArray,
     setFunctionArray,
+    setFunctionsDisplayed
   } = props;
 
   // when users click on the word, remove that word from poemArray.
@@ -52,6 +53,13 @@ const CreatePoem = (props) => {
     dbRef.push(yourPoem);
   };
 
+  // Refreshes all information on the page
+  const handleRefresh = () => {
+    setFunctionsDisplayed(false);
+    setYourPoem([]);
+    setWords([]);
+  };
+
   return (
     <>
       <ul>
@@ -63,11 +71,26 @@ const CreatePoem = (props) => {
           );
         })}
       </ul>
-      <button aria-label="save poem" className="saveBtn" onClick={savePoem}>
-        <span>
-          <FontAwesomeIcon className="faicons save" icon="save" />
-        </span>
-      </button>
+      <div className="poemButtons">
+        <button
+          aria-label="save poem"
+          className="saveBtn"
+          onClick={savePoem}
+        >
+          <span>
+            <FontAwesomeIcon className="faicons save" icon="save" />
+          </span>
+        </button>
+        <button
+          aria-label="refresh"
+          className="refreshBtn"
+          onClick={handleRefresh}
+        >
+          <span>
+            <FontAwesomeIcon className="faicons redo" icon="redo" />
+          </span>
+        </button>
+      </div>
     </>
   );
 };

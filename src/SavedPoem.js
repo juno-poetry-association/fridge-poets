@@ -41,7 +41,7 @@ const SavedPoem = () => {
             })}
             <button
               aria-label="delete poem"
-              className="saved"
+              className="deletePoem"
               onClick={() => removePoem(poem[0])}
             >
               <span>

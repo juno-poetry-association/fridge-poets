@@ -7,7 +7,6 @@ import CreatePoem from "./CreatePoem";
 import functionWordArray from "./functionWordArray";
 import SavedPoem from "./SavedPoem";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRedo,
   faTimes,
@@ -23,17 +22,14 @@ function App() {
   const [functionArray, setFunctionArray] = useState(functionWordArray);
   const [words, setWords] = useState([]);
 
-  const handleRefresh = () => {
-    setFunctionsDisplayed(false);
-    setYourPoem([]);
-    setWords([]);
-  };
-
   return (
     <div>
       <header className="wrapper">
         <div className="headerContainer">
-          <h1>Fridge Poetry</h1>
+          <div className="title">
+            <h1>Fridge Poetry</h1>
+            <p>Choose a theme or search your own!</p>
+          </div>
           <Form
             setUserSearchTerm={setUserSearchTerm}
             setFunctionsDisplayed={setFunctionsDisplayed}
@@ -42,7 +38,11 @@ function App() {
       </header>
 
       <main className="wrapper">
+
+      { functionsDisplayed ?
+      <>
         <section className="displaySection">
+          <h2>Theme Words:</h2>
           <DisplayWords
             userSearchTerm={userSearchTerm}
             yourPoem={yourPoem}
@@ -54,38 +54,33 @@ function App() {
 
         <div className="flex">
           <section className="functionWords">
-            {functionsDisplayed ? (
-              <FunctionWords
-                yourPoem={yourPoem}
-                setYourPoem={setYourPoem}
-                setFunctionArray={setFunctionArray}
-                functionArray={functionArray}
-              />
-            ) : null}
-          </section>
-
-          <section className="poemContainer">
-            <CreatePoem
+            <h2>Connecting Words:</h2>
+            <FunctionWords
               yourPoem={yourPoem}
               setYourPoem={setYourPoem}
               setFunctionArray={setFunctionArray}
               functionArray={functionArray}
+            />
+          </section>
+
+          <section className="poemContainer">
+            <h2>Your Poem:</h2>
+            <CreatePoem
+              yourPoem={yourPoem}
+              setYourPoem={setYourPoem}
+              setFunctionArray={setFunctionArray}
+              setFunctionsDisplayed={setFunctionsDisplayed}
+              functionArray={functionArray}
               setWords={setWords}
               words={words}
             />
-            <button
-              aria-label="refresh"
-              className="refreshBtn"
-              onClick={handleRefresh}
-            >
-              <span>
-                <FontAwesomeIcon className="faicons redo" icon="redo" />
-              </span>
-            </button>
           </section>
         </div>
+      </>
+      : null }
 
         <section className="savedPoem">
+          <h2>Saved Poems:</h2>
           <SavedPoem />
         </section>
       </main>
