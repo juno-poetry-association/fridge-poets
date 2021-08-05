@@ -1,0 +1,148 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Prevent overflow in theme words box */
+@media (max-width: 1305px) {
+  .displaySection {
+    overflow-y: scroll;
+  }
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+
+  h1 {
+    width: 30%;
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+
+  form {
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+  }
+
+  .searchLabel {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .search {
+    font-size: 4vw;
+  }
+
+  .allThemeButtons .magnet {
+    font-size: 2vw;
+  }
+
+  .allThemeButtons {
+    width: 90%;
+  }
+
+  li {
+    margin: 5px;
+    padding: 5px 10px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  /* increase to 480px (or more?) */
+
+  h1 {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    -webkit-text-stroke-width: 0;
+    -webkit-text-stroke-color: transparent;
+  }
+
+  .allThemeButtons {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: -50px;
+  }
+
+  .searchLabel {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+
+  .search {
+    font-size: 1rem;
+    height: 25px;
+  }
+
+  .allThemeButtons .magnet {
+    font-size: 2.25vw;
+  }
+
+  .magnet {
+    height: 3rem;
+  }
+
+  form input {
+    font-size: 2vw;
+  }
+
+  .headerContainer {
+    flex-direction: column;
+  }
+
+  header,
+  .flex {
+    flex-direction: column;
+    height: auto;
+  }
+
+  section {
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  li {
+    margin: 3px;
+    padding: 5px 5px 3px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .displaySection {
+    height: 25vh;
+  }
+
+  .functionWords,
+  .poemContainer {
+    overflow-y: scroll;
+    width: auto;
+  }
+
+  .functionWords {
+    height: 35vh;
+    order: 2;
+  }
+
+  .poemContainer {
+    height: 50vh;
+    order: 1;
+  }
+
+  .poemContainer ul {
+    margin-bottom: 50px;
+  }
+
+
+}

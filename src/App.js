@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.scss"
 import { useState } from "react";
 // importing components
 import Form from "./Form";
