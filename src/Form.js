@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Form(props) {
   const { setUserSearchTerm, setFunctionsDisplayed } = props;
