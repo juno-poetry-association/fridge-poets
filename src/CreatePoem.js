@@ -1,7 +1,9 @@
-import functionWordArray from "./functionWordArray";
-import firebase from "./firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import firebase from "./firebase";
+// importing array of common function words, suffixes and punctuation
+import functionWordArray from "./functionWordArray";
 
+// destructuring state/s and set functions from props
 const CreatePoem = (props) => {
   const {
     yourPoem,
@@ -13,11 +15,10 @@ const CreatePoem = (props) => {
     setFunctionsDisplayed
   } = props;
 
-  // when users click on the word, remove that word from poemArray.
-  // we need to send back to words array
-
+  // when users click on the word, send it back to it's original array and remove that word from poemArray.
   const handleRemove = (word) => {
     let isAFunctionWord = false;
+    // check the word against the original function word array
     for (let functionWord of functionWordArray) {
       if (functionWord === word) {
         isAFunctionWord = true;
@@ -63,6 +64,7 @@ const CreatePoem = (props) => {
   return (
     <>
       <ul>
+        {/* The array containing the created poem is mapped here */}
         {yourPoem.map((word) => {
           return (
             <li key={word} onClick={() => handleRemove(word)} onKeyPress={(e) => handleKeyPress(e, word)} tabIndex="0">
@@ -72,6 +74,7 @@ const CreatePoem = (props) => {
         })}
       </ul>
       <div className="poemButtons">
+        {/* This button stores the created poem in firebase */}
         <button
           aria-label="save poem"
           className="saveBtn"
@@ -81,6 +84,7 @@ const CreatePoem = (props) => {
             <FontAwesomeIcon className="faicons save" icon="save" />
           </span>
         </button>
+        {/* This button returns the page to it's load state */}
         <button
           aria-label="refresh"
           className="refreshBtn"
