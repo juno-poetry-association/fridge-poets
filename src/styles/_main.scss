@@ -1,0 +1,74 @@
+/* DISPLAY WORDS SECTION */
+
+.displaySection {
+  height: 28vh;
+}
+
+/* FUNCTION & POEM FLEX CONTAINER */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  height: 52vh;
+}
+
+/* FUNCTION WORDS */
+.functionWords {
+  overflow-y: scroll;
+  width: calc(40% - 20px);
+}
+
+/* POEM SECTION */
+.poemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 60%;
+}
+
+.poemButtons {
+  margin: auto 0 0 auto;
+}
+
+.saveBtn {
+  border: none;
+  background: none;
+  color: ghostwhite;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.refreshBtn {
+  border: none;
+  background: none;
+  color: ghostwhite;
+  font-size: 1.8rem;
+}
+
+.saveBtn:active,
+.saveBtn:hover,
+.saveBtn:focus,
+.refreshBtn:active,
+.refreshBtn:hover,
+.refreshBtn:focus {
+  color: orangered;
+}
+
+/* SAVED POEM SECTION */
+
+.savedPoem li {
+  cursor: default;
+}
+
+.deletePoem {
+  background: none;
+  border: none;
+  color: ghostwhite;
+  font-size: 1.25rem;
+}
+
+.deletePoem:active,
+.deletePoem:hover,
+.deletePoem:focus {
+  color: orangered;
+}
