@@ -31,11 +31,18 @@ const DisplayWords = (props) => {
     setWords(filteredArr);
   }
 
+  // keyboard accessibility to add words to poem
+  function handleKeyPress(e, word) {
+    if (e.charCode === 13) {
+      addWordToPoem(word)
+    }
+  }
+
   return (
     <ul>
       {words.map((word) => {
         return (
-          <li key={word} onClick={() => addWordToPoem(word)}>
+          <li key={word} onClick={() => addWordToPoem(word)} onKeyPress={(e) => handleKeyPress(e, word)} tabIndex="0">
             <p>{word}</p>
           </li>
         );

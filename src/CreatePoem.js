@@ -39,6 +39,13 @@ const CreatePoem = (props) => {
     setYourPoem(newPoem);
   };
 
+  // keyboard accessibility to remove words from poem
+  function handleKeyPress(e, word) {
+    if (e.charCode === 13) {
+      handleRemove(word)
+    }
+  }
+
   // Saving the poem to the firebase
   const savePoem = () => {
     const dbRef = firebase.database().ref();
@@ -50,7 +57,7 @@ const CreatePoem = (props) => {
       <ul>
         {yourPoem.map((word) => {
           return (
-            <li key={word} onClick={() => handleRemove(word)}>
+            <li key={word} onClick={() => handleRemove(word)} onKeyPress={(e) => handleKeyPress(e, word)} tabIndex="0">
               <p>{word}</p>
             </li>
           );
