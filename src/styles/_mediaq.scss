@@ -7,6 +7,12 @@
   }
 }
 
+@media (max-height: 900px) {
+  .displaySection {
+    overflow-y: scroll;
+  }
+}
+
 /* TABLET */
 @media (max-width: 950px) {
 

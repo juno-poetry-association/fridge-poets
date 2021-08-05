@@ -29,7 +29,7 @@ const SavedPoem = () => {
 
   return (
     <>
-      {/* Two mapping because it's into two layers of array */}
+      {/* Two mapping because it's into two layers of array */} 
       {favourites.map((poem) => {
         const poemWords = poem[1][0];
 
