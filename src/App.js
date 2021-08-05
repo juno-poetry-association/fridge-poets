@@ -23,11 +23,13 @@ function App() {
   return (
     <div>
       <header className="wrapper">
-        <h1>Refridgeration Versification</h1>
-        <Form
-          setUserSearchTerm={setUserSearchTerm}
-          setFunctionsDisplayed={setFunctionsDisplayed}
-        />
+        <div className="headerContainer">
+          <h1>Fridge Poetry</h1>
+          <Form
+            setUserSearchTerm={setUserSearchTerm}
+            setFunctionsDisplayed={setFunctionsDisplayed}
+          />
+        </div>
       </header>
 
       <main className="wrapper">
