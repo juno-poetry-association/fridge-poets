@@ -3,9 +3,10 @@ import firebase from "./firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SavedPoem = () => {
+  // state to hold all the saved poem to the firebase
   const [favourites, setFavourites] = useState([]);
 
-  // useEffect to store favourite movies into the state.
+  // useEffect to store favourite poem into the state.
   useEffect(() => {
     const dbRef = firebase.database().ref();
     dbRef.on("value", (snapshot) => {
@@ -19,14 +20,16 @@ const SavedPoem = () => {
     });
   }, []);
 
-  // remove fro the list
+  // remove the poem from the saved list
   const removePoem = (poem) => {
+    // Removing from the firebase
     const dbRef = firebase.database().ref();
     dbRef.child(poem).remove();
   };
 
   return (
     <>
+      {/* Two mapping because it's into two layers of array */}
       {favourites.map((poem) => {
         const poemWords = poem[1][0];
 

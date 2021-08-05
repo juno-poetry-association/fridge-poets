@@ -4,10 +4,13 @@ import axios from "axios";
 function Form(props) {
   const { setUserSearchTerm, setFunctionsDisplayed } = props;
 
+  // Creating a state to hold the userInputs.
   const [userInput, setUserInput] = useState("");
 
+  // Creating a state to hold the word auto completion
   const [autoComplete, setAutoComplete] = useState([]);
 
+  // Useeffect for calling an API for the autoComplete endpoint
   useEffect(() => {
     if (userInput !== "") {
       axios({
@@ -24,18 +27,21 @@ function Form(props) {
     }
   }, [userInput]);
 
+  // Event listner for the user input
   const inputHandleChange = (event) => {
     setUserInput(event.target.value);
   };
+
+  // Event listner for the submitting the form
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // making a function to check if the users are putting more then one word or number then give them an alert message
     const checkUserInput = /[^a-z]+/i;
     if (userInput === "") {
       alert("Please enter a word or choose some of our themes!");
     } else if (checkUserInput.test(userInput)) {
       alert("Please write one word only!");
-      // } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
-      //   alert("Wash your mouth!")
     } else {
       setUserSearchTerm(userInput);
       setFunctionsDisplayed(true);
@@ -43,15 +49,17 @@ function Form(props) {
     }
   };
 
+  // Function for all the themes buttons so that it can caputre that value and display results for different theme buttons
   const handleClick = (event) => {
     setUserInput(event.target.value);
   };
 
   return (
     <form action="#" onSubmit={handleSubmit}>
-
       <div className="searchLabel">
-        <label htmlFor="searchInput" className="sr-only">Search</label>
+        <label htmlFor="searchInput" className="sr-only">
+          Search
+        </label>
         <input
           type="text"
           id="searchInput"
@@ -59,9 +67,7 @@ function Form(props) {
           list="autoCompleteSuggestions"
           value={userInput}
         />
-        {/* <span className="magnifyingGlass">
-          <FontAwesomeIcon className="faicons" icon="search" />
-        </span> */}
+        {/* For autoComplete */}
         <datalist id="autoCompleteSuggestions">
           {autoComplete.map((suggestion, index) => {
             return <option value={suggestion.word} key={index}></option>;
@@ -71,6 +77,8 @@ function Form(props) {
           Search
         </button>
       </div>
+
+      {/* Theme buttons */}
 
       <div className="allThemeButtons">
         <button
@@ -102,7 +110,6 @@ function Form(props) {
           Technology
         </button>
       </div>
-
     </form>
   );
 }
