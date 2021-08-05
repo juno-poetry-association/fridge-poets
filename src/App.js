@@ -1,7 +1,4 @@
 import "./App.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faRedo, faTimes, faSave } from "@fortawesome/free-solid-svg-icons";
-library.add(faRedo, faTimes, faSave);
 import { useState } from "react";
 // importing components
 import Form from "./Form";
@@ -10,6 +7,9 @@ import FunctionWords from "./FunctionWords";
 import CreatePoem from "./CreatePoem";
 import functionWordArray from "./functionWordArray";
 import SavedPoem from "./SavedPoem";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faRedo, faTimes, faSave } from "@fortawesome/free-solid-svg-icons";
+library.add(faRedo, faTimes, faSave);
 
 function App() {
   // creating state for various arrays, search term and a display boolean
