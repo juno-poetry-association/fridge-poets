@@ -4,7 +4,10 @@ import Form from "./Form";
 import DisplayWords from "./DisplayWords";
 import FunctionWords from "./FunctionWords";
 import CreatePoem from "./CreatePoem";
+import Button from "./Button";
 import functionWordArray from "./functionWordArray";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import SavedPoem from "./SavedPoem";
 
 function App() {
@@ -21,64 +24,68 @@ function App() {
   };
 
   return (
-    <div>
-      <header className="wrapper">
-        <h1>Refridgeration Versification</h1>
-        <Form
-          setUserSearchTerm={setUserSearchTerm}
-          setFunctionsDisplayed={setFunctionsDisplayed}
-        />
-      </header>
-
-      <main className="wrapper">
-
-        <section className="displaySection">
-          <DisplayWords
-            userSearchTerm={userSearchTerm}
-            yourPoem={yourPoem}
-            setYourPoem={setYourPoem}
-            setWords={setWords}
-            words={words}
+    <Router>
+      <div>
+        <header className="wrapper">
+          <h1>Refridgeration Versification</h1>
+          <Form
+            setUserSearchTerm={setUserSearchTerm}
+            setFunctionsDisplayed={setFunctionsDisplayed}
           />
-        </section>
+        </header>
 
-        <div className="flex">
+        <main className="wrapper">
+          <section className="displaySection">
+            <DisplayWords
+              userSearchTerm={userSearchTerm}
+              yourPoem={yourPoem}
+              setYourPoem={setYourPoem}
+              setWords={setWords}
+              words={words}
+            />
+          </section>
 
-          <section className="functionWords">
-            {functionsDisplayed ? (
-              <FunctionWords
+          <div className="flex">
+            <section className="functionWords">
+              {functionsDisplayed ? (
+                <FunctionWords
+                  yourPoem={yourPoem}
+                  setYourPoem={setYourPoem}
+                  setFunctionArray={setFunctionArray}
+                  functionArray={functionArray}
+                />
+              ) : null}
+            </section>
+
+            <section className="poemContainer">
+              <CreatePoem
                 yourPoem={yourPoem}
                 setYourPoem={setYourPoem}
                 setFunctionArray={setFunctionArray}
                 functionArray={functionArray}
+                setWords={setWords}
+                words={words}
               />
-            ) : null}
+              <button onClick={handleRefresh}>Refresh!</button>
+            </section>
+          </div>
+
+          <section className="savedPoem">
+            {/* <SavedPoem /> */}
+
+            <Route exact path="/" component={Button} />
+
+            <Route exact path="/poem" component={SavedPoem} />
           </section>
+        </main>
 
-          <section className="poemContainer">
-            <CreatePoem
-              yourPoem={yourPoem}
-              setYourPoem={setYourPoem}
-              setFunctionArray={setFunctionArray}
-              functionArray={functionArray}
-              setWords={setWords}
-              words={words}
-            />
-            <button onClick={handleRefresh}>Refresh!</button>
-          </section>
-
-        </div>
-
-        <section className="savedPoem">
-          <SavedPoem />
-        </section>
-
-      </main>
-
-      <footer className="wrapper">
-        <p>Created at <a href="https://junocollege.com">Juno College</a></p>
-      </footer>
-    </div>
+        <footer className="wrapper">
+          <p>
+            Created at <a href="https://junocollege.com">Juno College</a>
+          </p>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
