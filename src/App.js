@@ -6,6 +6,15 @@ import FunctionWords from "./FunctionWords";
 import CreatePoem from "./CreatePoem";
 import functionWordArray from "./functionWordArray";
 import SavedPoem from "./SavedPoem";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRedo,
+  faTimes,
+  faSearch,
+  faSave,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faRedo, faTimes, faSearch, faSave);
 
 function App() {
   const [userSearchTerm, setUserSearchTerm] = useState("");
@@ -33,7 +42,6 @@ function App() {
       </header>
 
       <main className="wrapper">
-
         <section className="displaySection">
           <DisplayWords
             userSearchTerm={userSearchTerm}
@@ -45,7 +53,6 @@ function App() {
         </section>
 
         <div className="flex">
-
           <section className="functionWords">
             {functionsDisplayed ? (
               <FunctionWords
@@ -66,19 +73,27 @@ function App() {
               setWords={setWords}
               words={words}
             />
-            <button onClick={handleRefresh}>Refresh!</button>
+            <button
+              aria-label="refresh"
+              className="refreshBtn"
+              onClick={handleRefresh}
+            >
+              <span>
+                <FontAwesomeIcon className="faicons redo" icon="redo" />
+              </span>
+            </button>
           </section>
-
         </div>
 
         <section className="savedPoem">
           <SavedPoem />
         </section>
-
       </main>
 
       <footer className="wrapper">
-        <p>Created at <a href="https://junocollege.com">Juno College</a></p>
+        <p>
+          Created at <a href="https://junocollege.com">Juno College</a>
+        </p>
       </footer>
     </div>
   );
