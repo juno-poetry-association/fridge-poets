@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Form(props) {
   const { setUserSearchTerm, setFunctionsDisplayed } = props;
@@ -32,10 +33,10 @@ function Form(props) {
     const checkUserInput = /[^a-z]+/i;
     if (userInput === "") {
       alert("Please enter a word or choose some of our themes!");
-    } else if ( checkUserInput.test(userInput) ) { 
-      alert("Please write one word only!")
-    // } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
-    //   alert("Wash your mouth!")
+    } else if (checkUserInput.test(userInput)) {
+      alert("Please write one word only!");
+      // } else if (userInput === "bitch" || "fuck" || "shit" || "safi") {
+      //   alert("Wash your mouth!")
     } else {
       setUserSearchTerm(userInput);
       setFunctionsDisplayed(true);
@@ -57,20 +58,39 @@ function Form(props) {
         list="autoCompleteSuggestions"
         value={userInput}
       />
+
       <datalist id="autoCompleteSuggestions">
         {autoComplete.map((suggestion, index) => {
           return <option value={suggestion.word} key={index}></option>;
         })}
       </datalist>
-      <button className="search magnet" type="submit"> Search </button>
-      <button className="halloween magnet" onClick={handleClick} value="halloween">halloween</button>
-      <button className="christmas magnet"onClick={handleClick} value="christmas">
+      <button className="search magnet magnifyingGlass" type="submit">
+        <span>
+          <FontAwesomeIcon className="faicons " icon="search" />
+        </span>
+      </button>
+      <button
+        className="halloween magnet"
+        onClick={handleClick}
+        value="halloween"
+      >
+        halloween
+      </button>
+      <button
+        className="christmas magnet"
+        onClick={handleClick}
+        value="christmas"
+      >
         Christmas
       </button>
-      <button className="animals magnet"onClick={handleClick} value="animals">
+      <button className="animals magnet" onClick={handleClick} value="animals">
         Animals
       </button>
-      <button className="technology magnet"onClick={handleClick} value="technology">
+      <button
+        className="technology magnet"
+        onClick={handleClick}
+        value="technology"
+      >
         Technology
       </button>
     </form>

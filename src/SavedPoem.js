@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import firebase from "./firebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SavedPoem = () => {
   const [favourites, setFavourites] = useState([]);
@@ -38,7 +39,11 @@ const SavedPoem = () => {
                 </li>
               );
             })}
-            <button onClick={() => removePoem(poem[0])}>Remove</button>
+            <button className="saved" onClick={() => removePoem(poem[0])}>
+              <span>
+                <FontAwesomeIcon className="faicons" icon="times" />
+              </span>
+            </button>
           </ul>
         );
       })}
