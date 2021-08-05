@@ -1,5 +1,6 @@
 import functionWordArray from "./functionWordArray";
 import firebase from "./firebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CreatePoem = (props) => {
   const {
@@ -55,7 +56,11 @@ const CreatePoem = (props) => {
           );
         })}
       </ul>
-      <button onClick={savePoem}>Save</button>
+      <button aria-label="save poem" className="saveBtn" onClick={savePoem}>
+        <span>
+          <FontAwesomeIcon className="faicons save" icon="save" />
+        </span>
+      </button>
     </>
   );
 };
