@@ -72,7 +72,11 @@ const CreatePoem = (props) => {
         })}
       </ul>
       <div className="poemButtons">
-        <button aria-label="save poem" className="saveBtn" onClick={savePoem}>
+        <button
+          aria-label="save poem"
+          className="saveBtn"
+          onClick={savePoem}
+        >
           <span>
             <FontAwesomeIcon className="faicons save" icon="save" />
           </span>

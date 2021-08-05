@@ -36,9 +36,52 @@ section {
   padding: 20px;
 }
 
+h2 {
+  margin: 0 0 10px;
+  color: orangered;
+  font-size: 2rem;
+  font-weight: 800;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 2px 2px 0 2px black;
+  letter-spacing: 3px;
+  font-family: 'Georama', sans-serif;
+  text-transform: uppercase;
+  /* background-color: lightgray; */
+  /* width: 200px; */
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  background-color: ghostwhite;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0 black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+li:active,
+li:focus {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 1px 2px black;;
+  padding: 5px;
+}
+
 p {
   font-family: "Special Elite", serif;
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* HEADER SECTION  */
@@ -62,7 +105,11 @@ h1 {
   font-family: 'Alfa Slab One', cursive;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(8, 8, 8);
-  
+}
+
+.title p {
+  letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 /* FORM (inside header) */
@@ -77,27 +124,19 @@ form {
 }
 
 .searchLabel {
-  /* width: 50%; */
   display: flex;
-  justify-content: space-evenly;
+  width: 50%;
 }
 
 form input,
 form button {
   margin: 5px;
   padding: 5px 10px;
-  transition: all 0.2s;
 }
-
-/* form input,
-button {
-  margin: 10px;
-  padding: 10px;
-} */
 
 form input {
   min-width: 200px;
-  width: calc(60% - 20px);
+  width: 80%;
   border: none;
   font-family: 'Georama', sans-serif;
   box-shadow: 2.5px 2.5px 0 black;
@@ -108,6 +147,7 @@ form input {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  transition: all 0.2s;
 }
 
 .magnet {
@@ -119,26 +159,11 @@ form input {
   margin: 0 5px;
 }
 
-.magnet:active,
-.magnet:focus {
+.allThemeButtons .magnet:active,
+.allThemeButtons .magnet:focus {
   transform: scale(1.1);
   box-shadow: 2.5px 2.5px 1px 2px black;
 }
-
-/* STYLING FOR MAGNIFYING FA-ICON */
-/* form {
-  position: relative;
-} 
-.magnifyingGlass {
-  position: absolute;
-  right: 150px;
-  top: 22px;
-  background: none;
-}
-form span:hover,
-form span:focus {
-  color: orangered;
-} */
 
 .search {
   border: none;
@@ -147,7 +172,7 @@ form span:focus {
   text-shadow: 1px 1px black;
   font-size: 2vw;
   color: rgb(240, 102, 102);
-  width: calc(30% - 10px);
+  /* width: calc(30% - 10px); */
   box-shadow: none;
 }
 
@@ -216,52 +241,23 @@ form span:focus {
   height: 28vh;
 }
 
-
-
-  /* background-color: rgb(241, 221, 105);
-  background-size: cover;
-  background-position: center;
-  color: black; */
-
-
-li:active,
-li:focus {
-  transform: scale(1.1);
-  box-shadow: 2px 2px 1px 2px black;;
-  padding: 5px;
-}
-
-
-
-
-/* POEM SECTION */
-
-section {
-  background-color: rgba(0, 0, 0, 0.2);
-  /* border: 2px solid ghostwhite; */
-  margin: 10px 0;
-  padding: 20px;
-  min-height: 50px;
-}
-
-.displaySection {
-  height: 28vh;
-}
-
+/* FUNCTION & POEM FLEX CONTAINER */
 .flex {
   display: flex;
   justify-content: space-between;
   height: 52vh;
 }
 
+/* FUNCTION WORDS */
 .functionWords {
   overflow-y: scroll;
   width: calc(40% - 20px);
 }
 
+/* POEM SECTION */
 .poemContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
   width: 60%;
@@ -274,77 +270,49 @@ section {
 }
 
 .saveBtn {
-  position: absolute;
-  bottom: 0;
-  right: 50px;
   border: none;
   background: none;
-  cursor: pointer;
   color: ghostwhite;
-  font-size: 30px;
-}
-.save:hover,
-.save:focus {
-  color: orangered;
+  font-size: 2rem;
+  margin-right: 10px;
 }
 
 .refreshBtn {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
   border: none;
   background: none;
-  cursor: pointer;
-  font-size: 27px;
-}
-
-.redo {
   color: ghostwhite;
+  font-size: 1.8rem;
 }
 
-.redo:hover,
-.redo:focus {
+.saveBtn:active,
+.saveBtn:hover,
+.saveBtn:focus,
+.refreshBtn:active,
+.refreshBtn:hover,
+.refreshBtn:focus {
   color: orangered;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+/* SAVED POEM SECTION */
+
+.savedPoem li {
+  cursor: default;
 }
 
-li {
-  background-color: ghostwhite;
-  border: 1px solid black;
-  box-shadow: 2px 2px 0 black;
-  cursor: pointer;
-  display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
-}
-
-p {
-  font-family: 'Special Elite', serif;
-  margin: 0; 
-}
-/* Saved Poem */
-
-.savedPoem ul button {
-  padding: 2px;
+.deletePoem {
   background: none;
-  cursor: pointer;
   border: none;
-}
-
-.savedPoem span {
   color: ghostwhite;
+  font-size: 1.25rem;
 }
 
-.savedPoem span:hover,
-.savedPoem span:focus {
+.deletePoem:active,
+.deletePoem:hover,
+.deletePoem:focus {
   color: orangered;
 }
+
+/* FOOTER SECTION */
 
 footer {
   color: ghostwhite;
@@ -357,6 +325,7 @@ a {
   text-decoration: none;
 }
 
+a:active,
 a:hover,
 a:focus {
   color: orangered;
@@ -364,18 +333,15 @@ a:focus {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Fix background position in mobile view ?? */
+/* Prevent overflow in theme words box */
+@media (max-width: 1305px) {
+  .displaySection {
+    overflow-y: scroll;
+  }
+}
 
 /* TABLET */
-@media (max-width: 800px) {
-
-  .searchLabel {
-    width: 90%;
-  }
-
-  .allThemeButtons{
-    width: 90%;
-  }
+@media (max-width: 950px) {
 
   h1 {
     width: 30%;
@@ -389,8 +355,21 @@ a:focus {
     align-items: center;
   }
 
-  .displaySection {
-    overflow-y: scroll;
+  .searchLabel {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .search {
+    font-size: 4vw;
+  }
+
+  .allThemeButtons .magnet {
+    font-size: 2vw;
+  }
+
+  .allThemeButtons {
+    width: 90%;
   }
 
   li {
@@ -404,7 +383,7 @@ a:focus {
 }
 
 /* MOBILE */
-@media (max-width: 420px) {
+@media (max-width: 600px) {
   /* increase to 480px (or more?) */
 
   h1 {
@@ -414,13 +393,23 @@ a:focus {
 
   .allThemeButtons {
     width: 100%;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   .searchLabel {
     width: 100%;
+    justify-content: center;
     align-items: center;
     padding-bottom: 5px;
+  }
+
+  .search {
+    font-size: 10vw;
+  }
+
+  .allThemeButtons .magnet {
+    font-size: 2.25vw;
   }
 
   .magnet {
