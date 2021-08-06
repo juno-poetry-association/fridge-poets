@@ -99,7 +99,7 @@ form input {
   background-position: top;
   color: rgb(255, 94, 0);
   text-shadow: 2px 2px black;
-  transform: rotate(30deg)
+  transform: rotate(20deg)
 }
 
 .christmas {
@@ -109,8 +109,8 @@ form input {
   background-size: cover;
   background-position: bottom;
   border: 3px solid white;
-  color: red;
-  text-shadow: 1px 1px black;
+  color: darkred;
+  text-shadow: 1.5px 1.5px whitesmoke;
   transform: rotate(-10deg)
 }
 
@@ -122,17 +122,16 @@ form input {
   background-image: url(../assets/animals.jpg);
   background-size: contain;
   background-position: center;
-  text-shadow: 2px 2px black;
-  color: white;
+  text-shadow: 1.5px 1.5px skyblue;
+  color: blue;
 }
 
 .technology {
   width: 25%;
   height: 5rem;
-
   font-size: 1vw;
-  color: rgb(12, 182, 12);
-  text-shadow: 2px 2px black;
+  color: chartreuse;
+  text-shadow: 1px 1px  rgb(12, 182, 12);
   background-image: url(../assets/technology.jpg);
   background-size: cover;
   border: 3px solid rgb(104, 17, 17);
